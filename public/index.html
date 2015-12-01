@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>text support</title>
+</head>
+<body ng-app="textSupport" ng-controller="mainCtrl">
+  <numbers ng-repeat="(key, val) in numbers" number="key" messages="val" send-reply="sendReply(message, number)"></numbers>
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/firebase/firebase.js"></script>
+  <script src="bower_components/angularfire/dist/angularfire.js"></script>
+  <script src="app.js"></script>
+  <script src="controller.js"></script>
+  <script src="service.js"></script>
+  <script src="numbers/directive.js"></script>
+</body>
+</html>

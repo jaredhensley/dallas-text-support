@@ -1,0 +1,17 @@
+{{number}}
+<!-- Ideally, I would order these messages by date. Right now, I'm relying on the fact
+that firebase already has them in order by date, but that is not a guaranteed order.
+This is especially true, since zapier is only adding to firebase every 15 minutes.
+Part of the reason I can't get it to work at the moment is because zapier
+is formatting the date that I don't think angular likes. I'm going to worry
+about the orderBy later, even though it's kind of a critical component-->
+<div ng-repeat="message in messages | orderBy:'date'">
+  {{message.from === '+12082617237' ? 'me' : 'customer'}}: {{message.body}}
+  sent at: {{message.date | date: 'medium'}}
+</div>
+<form ng-submit="replyNow()">
+  <input type="text" ng-model="reply">
+  <button>Send</button>
+</form>
+<br>
+<hr>
